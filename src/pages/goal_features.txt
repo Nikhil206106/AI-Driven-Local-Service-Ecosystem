@@ -1,0 +1,51 @@
+Project: Service Booking Platform - Production Goals & Missing Features
+
+1. Payments & Financials
+   - Payment Gateway Integration (Stripe, Razorpay, or PayPal) for secure transactions.
+   - Vendor Payout System (Automated transfers, commission management).
+   - Invoicing & Receipt Generation for customers.
+   - Refund handling logic based on cancellation policies.
+
+2. Advanced Authentication & Security
+   - Email Verification / Phone OTP on registration. (Discussed: Nodemailer for email is a good first step).
+   - Secure Password Reset flow (Email links). (Discussed: Nodemailer is the recommended approach).
+   - Refresh Token implementation for better session security.
+   - OAuth Integration (Google/Facebook Login).
+   - Rate Limiting to prevent abuse.
+
+3. Enhanced Booking Experience
+   - Service Availability Calendar: Vendors define working hours/slots.
+   - Rescheduling functionality for bookings.
+   - In-app Chat System: Real-time communication between Customer and Vendor.
+   - er & Vendor Profiles
+   - Customer Profile Editing (Avatar, Phone, Address management).
+   - Vendor KYC: Document upload (ID, License) for verification.
+   - Service Gallery: Vendors uploading multiple images for their work.
+
+5. Search & Discovery
+   - Map View: Search services on a map interface.
+   - Advanced Filtering: Price range, Rating, Availability.
+   - Location-based sorting (Distance).
+
+6. Technical & DevOps
+   - Automated Testing (Unit & Integration tests).
+   - Error Logging & Monitoring (e.g., Sentry).
+   - CI/CD Pipeline setup.
+   - SEO Optimization (Meta tags, Sitemap).
+   - Accessibility Compliance (WCAG).
+   - Data Export: Allow Admins to export booking/user data to CSV/Excel.
+   - Input Validation: Comprehensive backend validation (Zod/Joi) for all forms. (IN PROGRESS)
+
+7. Codebase Refactoring & Cleanup (Immediate)
+   - Remove hardcoded API URLs (e.g., 'http://localhost:5000') in Services.tsx and AdminDashboard.tsx; use environment variables.
+   - Remove mock data fallbacks in AdminDashboard.tsx (fetchAnalytics) to prevent misleading data display on API failure.
+   - Unify Service Categories: Register.tsx uses a hardcoded list while VendorProfile.tsx fetches from API. Both should fetch from API.
+   - Security: Sanitize backend error messages (bookings.js) to avoid exposing internal stack traces or database errors to the client.
+
+8. Admin Panel Enhancements
+   - Category Management: View, edit image URLs, and upload new images for service categories. (COMPLETED)
+
+
+
+
+which more suitable way of this  feature to send the OTP via email using Nodemailer, we can send using message on whatsapp, or message, before making any changes discuss first then when i am done discuss then add code changes
